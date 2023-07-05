@@ -1,0 +1,37 @@
+extends base
+block content
+  .background.grafica
+    header.header
+      nav.navbar
+        span= `Bienvenido ${user.nombre}`
+        a.logout Cerrar sesion
+    each paciente in pacientes
+      -const {nombre,edad,sexo,telefono} = paciente
+        .container-card
+          .card
+            h3= `Paciente: ${nombre}`
+            p.carta__h3= `Edad: ${edad}`
+            p.carta__h3= `Sexo: ${sexo}`
+            p.carta__h3= `Teléfono: ${telefono}`
+            a(href=`grafica/${paciente._id}`) Leer M&agrave;s
+  button#openPopupBtn Registrar Paciente
+  #popup.popup
+    .popup-content
+      h2 Formulario de Registro de Pacientes
+      form.form--paciente
+        .input__paciente
+          label(for='nombre') Nombre Completo:
+          input#nombreP(type='text' name='nombreP' required='')
+          label(for='telefono') Telefono:
+          input#telP(type='number' name='telP' required='')
+          label(for='edad') Edad:
+          input#edadP(type='number' name='edadP' required='')
+          label(for='email') Correo Electr&oacute;nico:
+          input#correoP(type='text' name='correoP' required='')
+          label(for='sexo') Sexo:
+          input#sexoP(type='text' name='sexoP' required='')
+          button.btnP Ingresar
+      button#closePopupBtn Cerrar
+
+
+                

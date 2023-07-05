@@ -1,0 +1,28 @@
+extends base
+block content
+  
+  -const {nombre,email,edad,sexo,telefono,doctor,_id} = pacienteInfo 
+  body.body--paciente
+    .info-paciente
+      h2= `Datos del paciente: ${nombre}`
+      p= `Edad: ${edad}`
+      p= `Genero: ${sexo}`
+      p= `Telefono: ${telefono}`
+      p= `Doctor que atiende: ${doctor.nombre}`
+      p#idP= `${_id}`
+      button.btn-graficar#btnG #{suscrito ? 'Detener suscripcion' : 'Suscribirse'}
+      
+      .btnECG
+        a(href=`/graficas-paciente/${_id}`) Ver ECG
+      form.form--ecg
+        
+        label(for="comment") Comentario:
+        .comment
+          textarea#comment(name="comment" rows="4" cols="50")
+        
+        button.btn-graficar#btnPECG(type="submit") Enviar
+    // Agrega otros campos del formulario según tus necesidades
+
+    .ecg-graph 
+      h2 Grafica ECG
+      canvas#chart(width='400', height='400')

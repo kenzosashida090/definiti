@@ -1,0 +1,40 @@
+extends base
+block content 
+  .container-registro
+    .login-section
+      .form-box.registro
+        form.form--registro
+          h2.ingreso Registrate
+          .input-box--registro
+            span.icon
+            input#nombre.input-registro(type='text' name='nombre' required='')
+            label.nombre-registro(for='nombre') Nombre Completo del Doctor:
+          .input-box
+            span.icon
+            input#cedula.input-registro(type='text' name='cedula' required='' maxlength='10')
+            label.nombre-registro(for='cedula') Cedula:
+          .input-box
+            span.icon
+            input#NT.input-registro(type='text' name='NT' required='')
+            label.nombre-registro(for='NT') Numero de Trabajador:
+          .input-box
+            span.icon     
+            input#telefono.input-registro(type='tel' name='telefono' required='' maxlength='10')
+            label.nombre-registro(for='telefono') Telefono:
+          .input-box
+            span.icon    
+            input#NC.input-registro(type='text' name='NC' required='')
+            label.nombre-registro(for='NC') Nombre de Clinica:
+          .input-box
+            span.icon      
+            input#correo.input-registro(type='text' name='email' required='')
+            label.nombre-registro(for='email') Correo Electronico:
+          .input-box
+            span.icon    
+            input#contrasena.input-registro(type='password' name='password'  minlength='8' required='')
+            label.nombre-registro(for='password') Contrase&ntilde;a:
+          .input-box
+            span.icon    
+            input#contrasenaC.input-registro(type='password' name='passwordC'  minlength='8' required='')
+            label.nombre-registro(for='Confirmarpassword') Confirmar Contrase&ntilde;a:
+          button.btn Registrarse

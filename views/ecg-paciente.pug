@@ -1,0 +1,13 @@
+
+extends base
+block content
+  -const {tiempo,comentario,fechaPrueba} = ecgInfo
+  -const {nombre} = pacienteInfo
+      body.body--paciente
+        .container-card
+          .card
+            h3= `Paciente: ${nombre}`
+            h3= `fecha de Prueba: ${fechaPrueba}`
+            h3= `comentario: ${comentario}`
+            a(href='grafica') Leer M&agrave;s
+            
